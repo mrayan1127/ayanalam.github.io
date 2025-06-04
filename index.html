@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -71,6 +71,24 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       z-index: 1000;
     }
+
+    /* Album section */
+    .album {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .album img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .album img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -95,6 +113,15 @@
     <p>I’m planning to build a responsive personal website to showcase my skills in web development, graphic design, and data entry. This project will reflect my journey and growth as a freelancer.</p>
     <h3>2. Freelance Practice Projects (In Progress)</h3>
     <p>Currently working on practice projects to sharpen my skills and prepare for real client work on platforms like Fiverr. These projects are helping me build a strong foundation for future success.</p>
+  </section>
+
+  <section>
+    <h2>My Photo Album</h2>
+    <div class="album">
+      <img src="ayan1.jpg" alt="Photo 1" />
+      <img src="ayan2.jpg" alt="Photo 2" />
+      <img src="ayan3.jpg" alt="Photo 3" />
+    </div>
   </section>
 
   <section>
