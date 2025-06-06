@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,14 +16,32 @@
       color: #222;
     }
 
-  header {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #000000; /* Full black background */
-  color: white;
-  position: relative;
-  border-bottom: 20px solid #8b0000; /* Red bottom stripe */
-}
+    nav {
+      text-align: center;
+      padding: 10px;
+      background-color: #003366;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #000000;
+      color: white;
+      position: relative;
+      border-bottom: 20px solid #8b0000;
+    }
 
     .profile-img {
       width: 140px;
@@ -62,6 +80,11 @@
     a {
       color: #0066cc;
       text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #ff6600;
     }
 
     footer {
@@ -112,26 +135,46 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       z-index: 1000;
     }
+
+    @media (max-width: 600px) {
+      .name {
+        font-size: 28px;
+      }
+      .title {
+        font-size: 16px;
+      }
+      section {
+        padding: 20px 10px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <nav>
+    <a href="#about">আমার সম্পর্কে</a>
+    <a href="#skills">দক্ষতা</a>
+    <a href="#projects">প্রকল্প</a>
+    <a href="#contact">যোগাযোগ</a>
+  </nav>
+
   <header>
     <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
     <div class="name">Md. Ayan Alam</div>
     <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Data Entry Specialist</div>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <p>Hello! I’m Md. Ayan Alam — a passionate dreamer on a journey to become a skilled freelancer and future Chartered Accountant. I'm currently honing my abilities in web development, data entry, and graphic design, while balancing my academic pursuits. With a strong desire to grow, learn, and create value through my work, I’m building the foundation today for a brighter tomorrow.</p>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
     <p>I specialize in web development, graphic design, and data entry, combining creativity with precision. Currently building my skills to offer professional, reliable, and visually appealing digital solutions.</p>
   </section>
 
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
     <h3>1. Portfolio Website (Coming Soon)</h3>
     <p>I’m planning to build a responsive personal website to showcase my skills in web development, graphic design, and data entry. This project will reflect my journey and growth as a freelancer.</p>
@@ -139,7 +182,7 @@
     <p>Currently working on practice projects to sharpen my skills and prepare for real client work on platforms like Fiverr. These projects are helping me build a strong foundation for future success.</p>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Contact Me</h2>
     <p>Feel free to reach out to me directly on WhatsApp by clicking the button below:</p>
     <a href="https://wa.me/8801915050351" target="_blank" class="whatsapp-button">💬 Message Me on WhatsApp</a>
