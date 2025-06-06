@@ -1,190 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md. Ayan Alam | Portfolio</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <!-- AOS CSS for animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #fff;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #ffffff, #87ceeb, #000000);
-      color: #222;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
     }
-
+    .light-theme {
+      --bg-color: #fff;
+      --text-color: #000;
+    }
     header {
       text-align: center;
-      padding: 60px 20px;
-      background-color: #000000;
+      padding: 30px;
+      animation: zoomIn 1s ease;
+    }
+    h1 {
+      margin: 10px 0;
+      font-size: 2.5rem;
+    }
+    marquee {
+      background: #f44336;
       color: white;
-      position: relative;
-      border-bottom: 20px solid #8b0000;
-    }
-
-    .profile-img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
-
-    .name {
-      font-size: 36px;
+      padding: 5px;
       font-weight: bold;
-      margin: 10px 0 5px;
     }
-
-    .title {
-      font-size: 18px;
-      color: #d1d1d1;
+    .section {
+      padding: 30px;
     }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background-color: rgba(240, 248, 255, 0.85);
-      border-radius: 8px;
-      margin-top: 20px;
+    .about, .skills {
+      animation: slideInLeft 1s ease forwards;
     }
-
-    h2 {
-      color: #003366;
-      margin-bottom: 10px;
+    .projects img {
+      width: 200px;
+      margin: 10px;
+      transition: transform 0.3s;
     }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
+    .projects img:hover {
+      transform: scale(1.1);
     }
-
-    footer {
-      background-color: #003366;
-      color: white;
+    .social-icons i {
+      font-size: 24px;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+    .social-icons i:hover {
+      animation: bounce 0.5s;
+    }
+    .contact button {
+      padding: 10px 20px;
+      font-weight: bold;
+      animation: slideInRight 1s ease forwards;
+    }
+    .search-box {
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      margin: 20px;
+    }
+    .search-box input {
+      padding: 8px;
+      width: 200px;
     }
 
-    .social-links a {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-      margin-bottom: 12px;
-      color: #222;
+    /* Animations */
+    @keyframes zoomIn {
+      from {transform: scale(0.5); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
     }
-
-    .social-links i {
-      margin-right: 10px;
-      font-size: 20px;
-      color: #555;
+    @keyframes slideInLeft {
+      from {transform: translateX(-100%); opacity: 0;}
+      to {transform: translateX(0); opacity: 1;}
     }
-
-    .whatsapp-button, .telegram-button {
-      background-color: #25D366;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
+    @keyframes slideInRight {
+      from {transform: translateX(100%); opacity: 0;}
+      to {transform: translateX(0); opacity: 1;}
     }
-
-    .telegram-button {
-      background-color: #0088cc;
-      margin-left: 10px;
-    }
-
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
+    @keyframes bounce {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-10px);}
     }
   </style>
 </head>
 <body>
+  <!-- Theme Switcher -->
+  <button onclick="toggleTheme()" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">Toggle Theme</button>
+
+  <!-- Marquee -->
+  <marquee>আমাদের লক্ষ-সমূহ: ওয়েব ডিজাইন, গ্রাফিক ডিজাইন,ওয়ার্ডপ্রেস!</marquee>
+
+  <!-- Header -->
   <header>
-    <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
-    <div class="name">Md. Ayan Alam</div>
-    <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Data Entry Specialist</div>
+    <img src="ayan.jpg" alt="Profile" width="120" style="border-radius: 50%;">
+    <h1>Md. Ayan Alam</h1>
+    <p>Future Chartered Accountant | Web Developer | Graphics Designer |</p>
   </header>
 
-  <section data-aos="fade-up">
+  <!-- Search Box -->
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+  </div>
+
+  <!-- About Section -->
+  <div class="section about">
     <h2>About Me</h2>
-    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer on a journey to become a skilled freelancer and future Chartered Accountant. I'm currently honing my abilities in web development, data entry, and graphic design, while balancing my academic pursuits. With a strong desire to grow, learn, and create value through my work, I’m building the foundation today for a brighter tomorrow.</p>
-  </section>
+    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer on a journey to become a skilled freelancer and future Chartered Accountant...</p>
+  </div>
 
-  <section data-aos="fade-right">
+  <!-- Skills Section -->
+  <div class="section skills">
     <h2>Skills</h2>
-    <p>I specialize in web development, graphic design, and data entry, combining creativity with precision. Currently building my skills to offer professional, reliable, and visually appealing digital solutions.</p>
-  </section>
+    <p>Web Development, Graphic Design, Data Entry, etc.</p>
+  </div>
 
-  <section data-aos="fade-left">
+  <!-- Projects Section -->
+  <div class="section projects">
     <h2>Projects</h2>
-    <h3>1. Portfolio Website (Coming Soon)</h3>
-    <p><img src="project-thumbnail1.jpg" alt="Project Screenshot" width="100"> Coming soon...</p>
-    <h3>2. Freelance Practice Projects (In Progress)</h3>
-    <p><img src="project-thumbnail2.jpg" alt="Project Screenshot" width="100"> Coming soon...</p>
-  </section>
+    <img src="project1.jpg" alt="Project 1">
+    <img src="project2.jpg" alt="Project 2">
+  </div>
 
-  <section data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out to me directly:</p>
-    <a href="https://wa.me/8801763741812" target="_blank" class="whatsapp-button">💬 WhatsApp</a>
-    <a href="https://t.me/urayan1425" target="_blank" class="telegram-button">💬 Telegram</a>
-  </section>
+  <!-- Social Icons -->
+  <div class="section social-icons">
+    <h2>Follow Me</h2>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+  </div>
 
-  <section data-aos="zoom-in">
-    <h2>Social Media</h2>
-    <div class="social-links">
-      <a href="https://www.facebook.com/mdayan15" target="_blank">
-        <i class="fab fa-facebook-f"></i> <span>Facebook</span>
-      </a>
-      <a href="https://www.instagram.com/mysticalpha_07" target="_blank">
-        <i class="fab fa-instagram"></i> <span>Instagram</span>
-      </a>
-      <a href="https://github.com/mrayan1127" target="_blank">
-        <i class="fab fa-github"></i> <span>GitHub</span>
-      </a>
-      <a href="https://www.linkedin.com/in/md-ayan-alam-2b5608369/" target="_blank">
-        <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
-      </a>
-    </div>
-  </section>
+  <!-- Contact Section -->
+  <div class="section contact">
+    <h2>Contact</h2>
+    <button>Send Message</button>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Md. Ayan Alam. All rights reserved.</p>
-  </footer>
-
-  <a href="https://wa.me/8801763741812" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
-
-  <!-- AOS JS for animations -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+    function toggleTheme() {
+      document.body.classList.toggle('light-theme');
+    }
   </script>
 </body>
 </html>
