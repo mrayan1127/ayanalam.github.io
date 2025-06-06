@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Md. Ayan Alam | Portfolio</title>
-  
+
+  <!-- SEO Tags -->
+  <meta name="description" content="Md. Ayan Alam is a passionate freelancer focusing on web development, graphic design, and data entry, aspiring to become a Chartered Accountant.">
+  <meta name="keywords" content="Md. Ayan Alam, web developer, graphic designer, data entry specialist, freelancer, portfolio, chartered accountant">
+  <meta name="author" content="Md. Ayan Alam">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
@@ -14,30 +23,14 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom right, #ffffff, #87ceeb, #000000);
       color: #222;
-    }
-
-    nav {
-      text-align: center;
-      padding: 10px;
-      background-color: #003366;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    nav a:hover {
-      color: #ffcc00;
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
       text-align: center;
       padding: 60px 20px;
-      background-color: #000000;
+      background-color: #000;
       color: white;
       position: relative;
       border-bottom: 20px solid #8b0000;
@@ -80,11 +73,6 @@
     a {
       color: #0066cc;
       text-decoration: none;
-      transition: 0.3s;
-    }
-
-    a:hover {
-      color: #ff6600;
     }
 
     footer {
@@ -109,7 +97,7 @@
       color: #555;
     }
 
-    .whatsapp-button {
+    .contact-button {
       background-color: #25D366;
       color: white;
       border: none;
@@ -120,6 +108,11 @@
       text-decoration: none;
       display: inline-block;
       margin-top: 10px;
+    }
+
+    .telegram-button {
+      background-color: #229ED9;
+      margin-left: 10px;
     }
 
     .floating-whatsapp {
@@ -136,27 +129,51 @@
       z-index: 1000;
     }
 
-    @media (max-width: 600px) {
-      .name {
-        font-size: 28px;
-      }
-      .title {
-        font-size: 16px;
-      }
-      section {
-        padding: 20px 10px;
-      }
+    .dark-mode {
+      background: #121212;
+      color: #f0f0f0;
     }
+
+    .dark-mode header,
+    .dark-mode footer {
+      background-color: #1e1e1e;
+    }
+
+    .dark-mode section {
+      background-color: rgba(40, 40, 40, 0.9);
+    }
+
+    #darkModeToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #333;
+      color: #fff;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .project-thumbnail {
+      background-color: #ccc;
+      height: 150px;
+      border: 2px dashed #aaa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#about">আমার সম্পর্কে</a>
-    <a href="#skills">দক্ষতা</a>
-    <a href="#projects">প্রকল্প</a>
-    <a href="#contact">যোগাযোগ</a>
-  </nav>
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
 
   <header>
     <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
@@ -164,45 +181,41 @@
     <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Data Entry Specialist</div>
   </header>
 
-  <section id="about">
+  <section>
     <h2>About Me</h2>
     <p>Hello! I’m Md. Ayan Alam — a passionate dreamer on a journey to become a skilled freelancer and future Chartered Accountant. I'm currently honing my abilities in web development, data entry, and graphic design, while balancing my academic pursuits. With a strong desire to grow, learn, and create value through my work, I’m building the foundation today for a brighter tomorrow.</p>
   </section>
 
-  <section id="skills">
+  <section>
     <h2>Skills</h2>
     <p>I specialize in web development, graphic design, and data entry, combining creativity with precision. Currently building my skills to offer professional, reliable, and visually appealing digital solutions.</p>
   </section>
 
-  <section id="projects">
+  <section>
     <h2>Projects</h2>
-    <h3>1. Portfolio Website (Coming Soon)</h3>
+    <h3>1. Portfolio Website</h3>
+    <div class="project-thumbnail">Coming Soon</div>
     <p>I’m planning to build a responsive personal website to showcase my skills in web development, graphic design, and data entry. This project will reflect my journey and growth as a freelancer.</p>
-    <h3>2. Freelance Practice Projects (In Progress)</h3>
+
+    <h3>2. Freelance Practice Projects</h3>
+    <div class="project-thumbnail">Coming Soon</div>
     <p>Currently working on practice projects to sharpen my skills and prepare for real client work on platforms like Fiverr. These projects are helping me build a strong foundation for future success.</p>
   </section>
 
-  <section id="contact">
+  <section>
     <h2>Contact Me</h2>
-    <p>Feel free to reach out to me directly on WhatsApp by clicking the button below:</p>
-    <a href="https://wa.me/8801915050351" target="_blank" class="whatsapp-button">💬 Message Me on WhatsApp</a>
+    <p>Feel free to reach out to me directly via WhatsApp or Telegram:</p>
+    <a href="https://wa.me/8801763741812" target="_blank" class="contact-button">💬 WhatsApp</a>
+    <a href="https://t.me/urayan1425" target="_blank" class="contact-button telegram-button">📩 Telegram</a>
   </section>
 
   <section>
     <h2>Social Media</h2>
     <div class="social-links">
-      <a href="https://www.facebook.com/mdayan15" target="_blank">
-        <i class="fab fa-facebook-f"></i> <span>Facebook</span>
-      </a>
-      <a href="https://www.instagram.com/mysticalpha_07" target="_blank">
-        <i class="fab fa-instagram"></i> <span>Instagram</span>
-      </a>
-      <a href="https://github.com/mrayan1127" target="_blank">
-        <i class="fab fa-github"></i> <span>GitHub</span>
-      </a>
-      <a href="https://www.linkedin.com/in/md-ayan-alam-2b5608369/" target="_blank">
-        <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
-      </a>
+      <a href="https://www.facebook.com/mdayan15" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="https://www.instagram.com/mysticalpha_07" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://github.com/mrayan1127" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/md-ayan-alam-2b5608369/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
   </section>
 
@@ -210,6 +223,14 @@
     <p>&copy; 2025 Md. Ayan Alam. All rights reserved.</p>
   </footer>
 
-  <a href="https://wa.me/8801915050351" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
+  <a href="https://wa.me/8801763741812" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+
 </body>
 </html>
