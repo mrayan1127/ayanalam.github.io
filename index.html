@@ -45,6 +45,12 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+    /* Stylish background animation */
+    @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+     }
 
     body {
       margin: 0;
@@ -120,14 +126,18 @@
       color: #bdbdbd;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background-color: #ffffff;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
+   section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background: linear-gradient(135deg, #1a1a1a, #330000, #1a1a1a); /* Stylish black-red-black */
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #f2f2f2; /* Light text color for dark background */
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+   }
 
     h2 {
       color: #4FC3F7;
