@@ -55,6 +55,42 @@
       transition: background 0.3s, color 0.3s;
     }
 
+    /* Navigation Bar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #003366;
+      color: white;
+      padding: 14px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #64ffda;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #64ffda;
+    }
+
     header {
       text-align: center;
       padding: 60px 20px;
@@ -223,8 +259,21 @@
   <!-- Dark Mode Toggle -->
   <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
 
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Ayan Alam</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#social">Social</a></li>
+    </ul>
+  </nav>
+
   <!-- Header -->
-  <header>
+  <header id="home">
     <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
     <div class="name">Md. Ayan Alam (RAFID)</div>
     <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Wordpress</div>
@@ -236,19 +285,19 @@
   </marquee>
 
   <!-- About Section -->
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <p>Hello! I’m Md. Ayan Alam — a passionate dreamer on a journey to become a skilled freelancer and future Chartered Accountant. I'm currently honing my abilities in web development, data entry, and graphic design, while balancing my academic pursuits. With a strong desire to grow, learn, and create value through my work, I’m building the foundation today for a brighter tomorrow.</p>
   </section>
 
   <!-- Skills Section -->
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
     <p>I specialize in web development, graphic design, combining creativity with precision. Currently building my skills to offer professional, reliable, and visually appealing digital solutions.</p>
   </section>
 
   <!-- Projects Section -->
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
     <h3>1. Portfolio Website</h3>
     <div class="project-thumbnail">Coming Soon</div>
@@ -260,10 +309,10 @@
   </section>
 
   <!-- Contact Section -->
-  <section>
+  <section id="contact">
     <h2>Contact Me</h2>
     <p>Feel free to reach out to me directly via WhatsApp or Telegram:</p>
-    <a href="https://wa.me/8801763741812" target="_blank" class="contact-button">💬 WhatsApp</a>
+    <a href="https://wa.me/8801915050351" target="_blank" class="contact-button">💬 WhatsApp</a>
     <a href="https://t.me/urayan1425" target="_blank" class="contact-button telegram-button">📩 Telegram</a>
   </section>
 
@@ -278,7 +327,7 @@
   </section>
 
   <!-- Social Media Section -->
-  <section>
+  <section id="social">
     <h2>Social Media</h2>
     <div class="social-links">
       <a href="https://www.facebook.com/mdayan15" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
