@@ -61,9 +61,9 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    .navbar {
+     .navbar {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start; /* Updated */
       align-items: center;
       background-color: #003366;
       color: white;
@@ -73,10 +73,11 @@
       z-index: 1000;
     }
 
-    .navbar .logo {
+    .logo {
       font-size: 22px;
       font-weight: bold;
       color: #64ffda;
+      margin-right: 30px; /* Added space between logo and links */
     }
 
     .nav-links {
