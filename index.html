@@ -45,12 +45,12 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-    /* Stylish background animation */
+
     @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-     }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
     body {
       margin: 0;
@@ -61,7 +61,6 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* Navigation Bar Styles */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -126,18 +125,18 @@
       color: #bdbdbd;
     }
 
-   section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-  background: linear-gradient(135deg, #1a1a1a, #330000, #1a1a1a); /* Stylish black-red-black */
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: #f2f2f2; /* Light text color for dark background */
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-   }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: linear-gradient(135deg, #000000, #0d47a1, #000000);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #f2f2f2;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
 
     h2 {
       color: #4FC3F7;
@@ -289,44 +288,40 @@
     <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Wordpress</div>
   </header>
 
-  <!-- Marquee Text -->
+  <!-- Marquee -->
   <marquee behavior="scroll" direction="left" scrollamount="5" style="background-color:#003366; color:white; padding:10px; font-weight:bold;">
     Welcome to Md. Ayan Alam's Portfolio | Web Developer | Graphic Designer | Future Chartered Accountant
   </marquee>
 
-  <!-- About Section -->
+  <!-- Sections -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer on a journey to become a skilled freelancer and future Chartered Accountant. I'm currently honing my abilities in web development, data entry, and graphic design, while balancing my academic pursuits. With a strong desire to grow, learn, and create value through my work, I’m building the foundation today for a brighter tomorrow.</p>
+    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer on a journey to become a skilled freelancer and future Chartered Accountant...</p>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <p>I specialize in web development, graphic design, combining creativity with precision. Currently building my skills to offer professional, reliable, and visually appealing digital solutions.</p>
+    <p>I specialize in web development, graphic design, combining creativity with precision...</p>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
     <h3>1. Portfolio Website</h3>
     <div class="project-thumbnail">Coming Soon</div>
-    <p>I’m planning to build a responsive personal website to showcase my skills in web development, graphic design. This project will reflect my journey and growth as a freelancer.</p>
+    <p>Planning to build a responsive website...</p>
 
     <h3>2. Freelance Practice Projects</h3>
     <div class="project-thumbnail">Coming Soon</div>
-    <p>Currently working on practice projects to sharpen my skills and prepare for real client work on platforms like Fiverr. These projects are helping me build a strong foundation for future success.</p>
+    <p>Currently working on practice projects...</p>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>Feel free to reach out to me directly via WhatsApp or Telegram:</p>
+    <p>Reach out via WhatsApp or Telegram:</p>
     <a href="https://wa.me/8801915050351" target="_blank" class="contact-button">💬 WhatsApp</a>
     <a href="https://t.me/urayan1425" target="_blank" class="contact-button telegram-button">📩 Telegram</a>
   </section>
 
-  <!-- Search Section -->
   <section>
     <h2>Search</h2>
     <form onsubmit="searchContent(event)">
@@ -336,7 +331,6 @@
     <p id="searchResult" style="margin-top: 15px; font-weight: bold;"></p>
   </section>
 
-  <!-- Social Media Section -->
   <section id="social">
     <h2>Social Media</h2>
     <div class="social-links">
@@ -347,7 +341,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Md. Ayan Alam. All rights reserved.</p>
   </footer>
@@ -355,15 +348,12 @@
   <!-- Floating WhatsApp -->
   <a href="https://wa.me/8801763741812" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
 
-  <!-- JavaScript -->
   <script>
-    // Dark mode toggle
     const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
 
-    // Search functionality
     function searchContent(event) {
       event.preventDefault();
       const query = document.getElementById('searchInput').value.toLowerCase();
@@ -374,7 +364,6 @@
       document.getElementById('searchResult').textContent = result;
     }
 
-    // Loader fade out after page load
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
       loader.style.opacity = '0';
@@ -382,6 +371,5 @@
       setTimeout(() => loader.style.display = 'none', 500);
     });
   </script>
-
 </body>
 </html>
