@@ -52,19 +52,30 @@
       100% { background-position: 0% 50%; }
     }
 
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #ffffff, #87ceeb, #000000);
-      color: #222;
       scroll-behavior: smooth;
-      transition: background 0.3s, color 0.3s;
+    }
+
+    .menu-toggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      font-size: 26px;
+      background-color: #003366;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1100;
     }
 
     .navbar {
       position: fixed;
       top: 0;
-      left: 0;
+      left: -220px;
       height: 100vh;
       width: 220px;
       background-color: #003366;
@@ -74,6 +85,11 @@
       flex-direction: column;
       align-items: center;
       z-index: 1000;
+      transition: left 0.3s ease;
+    }
+
+    .navbar.active {
+      left: 0;
     }
 
     .logo {
@@ -108,13 +124,14 @@
       color: #64ffda;
     }
 
-    .content {
-      padding: 30px;
-    }
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
 
-    .content h1 {
-      color: #003366;
-    }
+      .navbar {
+        left: 0;
+      }
     header {
       text-align: center;
       padding: 60px 20px;
