@@ -231,7 +231,38 @@ This is just the beginning, and I’m excited to see where this journey takes me
     <p>আমি Google Sites ব্যবহার করে "<strong>নৈঃশব্দ্যের আলিঙ্গন</strong>" নামের একটি Facebook Page-এর জন্য একটি ওয়েবসাইট ডিজাইন ও তৈরি করেছি। এই প্রজেক্টে আমি সম্পূর্ণ ডিজাইন, কনটেন্ট স্ট্রাকচার এবং লিংকিং নিজেই করেছি।</p>
   </div>
 </section>
+    /* Projects Section Styling */
+    #projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
+    .project-item {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      padding: 20px;
+      flex: 1 1 calc(30% - 40px);
+      min-width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+
+    .project-item h3 {
+      color: #4FC3F7;
+      margin-bottom: 10px;
+    }
+
+    .project-thumbnail {
+      margin-bottom: 10px;
+    }
 
   <section id="contact">
     <h2>Contact Me</h2>
