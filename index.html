@@ -6,7 +6,7 @@
   <title>Md. Ayan Alam (RAFID) | Portfolio</title>
 
   <!-- SEO Tags -->
-  <meta name="description" content="Md. Ayan Alam is a passionate freelancer focusing on web development, graphic design, and  aspiring to become a Chartered Accountant.">
+  <meta name="description" content="Md. Ayan Alam is a passionate freelancer focusing on web development, graphic design, and aspiring to become a Chartered Accountant.">
   <meta name="keywords" content="Md. Ayan Alam, web developer, graphic designer, freelancer, portfolio, chartered accountant">
   <meta name="author" content="Md. Ayan Alam">
   <meta name="robots" content="index, follow">
@@ -27,6 +27,8 @@
     body {
       font-family: Arial, sans-serif;
       overflow-x: hidden;
+      background: #111;
+      color: #f2f2f2;
     }
 
     /* Navigation Bar */
@@ -96,20 +98,15 @@
 
     section {
       padding: 40px 20px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
-      background: linear-gradient(135deg, #000000, #0d47a1, #000000);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      color: #f2f2f2;
-      border-radius: 8px;
       margin-top: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
     }
 
     h2 {
       color: #4FC3F7;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
     footer {
@@ -155,82 +152,6 @@
       z-index: 1000;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="navbar">
-    <div class="logo">MD. Ayan Alam</div>
-    <ul class="nav-links">
-      <li><a href="#home">🏠 Home</a></li>
-      <li><a href="#about">👤 About</a></li>
-      <li><a href="#skills">🛠️ Skills</a></li>
-      <li><a href="#projects">📂 Projects</a></li>
-      <li><a href="#contact">✉️ Contact</a></li>
-      <li><a href="#social">🌐 Social</a></li>
-    </ul>
-  </nav>
-
-  <header id="home">
-    <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
-    <div class="name">Md. Ayan Alam (RAFID)</div>
-    <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Wordpress</div>
-  </header>
-
-  <marquee behavior="scroll" direction="left" scrollamount="5" style="background-color:#003366; color:white; padding:10px; font-weight:bold;">
-    আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। প্রিয় ভাই ও বোনেরা🌸 🌟 স্বাগতম Md. Ayan Alam (RAFID) এর পোর্টফোলিওতে! | 💻 Web Developer | 🎨 Graphic Designer | 🎯 Future Chartered Accountant | যোগাযোগ করুন WhatsApp / Telegram এর মাধ্যমে!
-  </marquee>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer and an ambitious individual currently on an exciting journey to become a skilled freelancer and a future Chartered Accountant.
-
-With a deep interest in technology, business, and creative problem-solving, I’m actively building my skills in areas like graphic design, web development, and digital tools that empower modern professionals. I believe in continuous learning and self-improvement, and I dedicate my time to exploring new ways to add value through hard work and dedication.
-
-Whether it’s creating a functional website, designing a clean visual, or organizing complex data — I enjoy challenges and always strive to deliver the best results with integrity and precision.
-
-This is just the beginning, and I’m excited to see where this journey takes me..</p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>I specialize in web development, graphic design, combining creativity with precision...</p>
-  </section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project-item">
-    <h3>1. Portfolio Website</h3>
-    <div class="project-thumbnail">Coming Soon</div>
-    <p>Planning to build a responsive website...</p>
-  </div>
-
-  <div class="project-item">
-    <h3>2. Freelance Practice Projects: Personal Business Card Design</h3>
-    <div class="project-thumbnail">
-      <p>You can view or download my business card using the link below:</p>
-      <a class="btn" href="https://drive.google.com/file/d/1XGMTfIpWWskOsBpGlTWOsgzwFrgChDja/view?usp=drive_link" target="_blank">
-        View Business Card
-      </a>
-    </div>
-  </div>
-
-  <div class="project-item">
-    <h3>3. Facebook Page Website: নৈঃশব্দ্যের আলিঙ্গন</h3>
-    <div class="project-thumbnail">
-      <a href="https://sites.google.com/view/official-silent-embrace" target="_blank" style="color: #003366; font-weight: bold; text-decoration: none;">
-        Visit Live Website
-      </a>
-    </div>
-    <p>আমি Google Sites ব্যবহার করে "<strong>নৈঃশব্দ্যের আলিঙ্গন</strong>" নামের একটি Facebook Page-এর জন্য একটি ওয়েবসাইট ডিজাইন ও তৈরি করেছি। এই প্রজেক্টে আমি সম্পূর্ণ ডিজাইন, কনটেন্ট স্ট্রাকচার এবং লিংকিং নিজেই করেছি।</p>
-  </div>
-</section>
     /* Projects Section Styling */
     #projects {
       display: flex;
@@ -264,6 +185,90 @@ This is just the beginning, and I’m excited to see where this journey takes me
       margin-bottom: 10px;
     }
 
+    /* Social Links */
+    .social-links a {
+      display: inline-block;
+      margin: 5px 10px;
+      color: #4FC3F7;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">MD. Ayan Alam</div>
+    <ul class="nav-links">
+      <li><a href="#home">🏠 Home</a></li>
+      <li><a href="#about">👤 About</a></li>
+      <li><a href="#skills">🛠️ Skills</a></li>
+      <li><a href="#projects">📂 Projects</a></li>
+      <li><a href="#contact">✉️ Contact</a></li>
+      <li><a href="#social">🌐 Social</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
+    <div class="name">Md. Ayan Alam (RAFID)</div>
+    <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Wordpress</div>
+  </header>
+
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="background-color:#003366; color:white; padding:10px; font-weight:bold;">
+    আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। প্রিয় ভাই ও বোনেরা🌸 🌟 স্বাগতম Md. Ayan Alam (RAFID) এর পোর্টফোলিওতে! | 💻 Web Developer | 🎨 Graphic Designer | 🎯 Future Chartered Accountant | যোগাযোগ করুন WhatsApp / Telegram এর মাধ্যমে!
+  </marquee>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer...</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>I specialize in web development, graphic design...</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-item">
+      <h3>1. Portfolio Website</h3>
+      <div class="project-thumbnail">Coming Soon</div>
+      <p>Planning to build a responsive website...</p>
+    </div>
+
+    <div class="project-item">
+      <h3>2. Freelance Practice: Business Card</h3>
+      <div class="project-thumbnail">
+        <p>You can view or download my business card:</p>
+        <a class="btn" href="https://drive.google.com/file/d/1XGMTfIpWWskOsBpGlTWOsgzwFrgChDja/view?usp=drive_link" target="_blank">
+          View Business Card
+        </a>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <h3>3. Facebook Page Website</h3>
+      <div class="project-thumbnail">
+        <a href="https://sites.google.com/view/official-silent-embrace" target="_blank" style="color: #4FC3F7; font-weight: bold;">
+          Visit Live Website
+        </a>
+      </div>
+      <p>Google Sites ব্যবহার করে "<strong>নৈঃশব্দ্যের আলিঙ্গন</strong>" নামের একটি Facebook Page-এর জন্য ওয়েবসাইট ডিজাইন করেছি।</p>
+    </div>
+  </section>
+
   <section id="contact">
     <h2>Contact Me</h2>
     <p>Reach out via WhatsApp or Telegram:</p>
@@ -286,6 +291,5 @@ This is just the beginning, and I’m excited to see where this journey takes me
   </footer>
 
   <a href="https://wa.me/8801915050351" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
-
 </body>
 </html>
