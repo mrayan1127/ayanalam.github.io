@@ -9,10 +9,6 @@
   <meta name="description" content="Md. Ayan Alam is a freelancer in web development, graphic design, and an aspiring Chartered Accountant.">
   <meta name="keywords" content="Md. Ayan Alam, web developer, graphic designer, freelancer, portfolio, chartered accountant">
   <meta name="author" content="Md. Ayan Alam">
-  <meta name="robots" content="index, follow">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon-png.ico" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -28,6 +24,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0d1117;
       color: #e6edf3;
+      overflow-x: hidden;
     }
 
     .navbar {
@@ -40,7 +37,6 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     .logo {
@@ -59,7 +55,6 @@
       color: #c9d1d9;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
     }
 
     .nav-links a:hover {
@@ -116,10 +111,52 @@
       font-size: 16px;
     }
 
+    /* Skill Progress Bars */
+    .skills-section {
+      margin-top: 40px;
+    }
+
+    .skill {
+      margin-bottom: 25px;
+    }
+
+    .skill span {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .progress-bar {
+      background-color: #2d3748;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 25px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #58a6ff, #1f6feb);
+      text-align: right;
+      padding-right: 10px;
+      line-height: 25px;
+      color: #fff;
+      font-weight: bold;
+      transition: width 0.6s ease-in-out;
+    }
+
     /* Contact Form */
+    .contact-section {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
     form {
       max-width: 600px;
-      margin: 30px auto;
+      margin: auto;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -128,7 +165,7 @@
     input, textarea {
       padding: 12px 15px;
       border: 1px solid #30363d;
-      background: #161b22;
+      background: #0d1117;
       color: #e6edf3;
       border-radius: 8px;
       resize: vertical;
@@ -190,27 +227,57 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        background-color: #161b22;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        display: none;
-      }
-
-      .navbar.active .nav-links {
-        display: flex;
-      }
+    /* Testimonials */
+    .testimonials {
+      margin-top: 60px;
+      text-align: center;
     }
+
+    .testimonial-carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      height: 180px;
+    }
+
+    .testimonial-item {
+      flex: 0 0 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-carousel .testimonial-item.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .testimonial-author {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #58a6ff;
+    }
+
+    @keyframes carousel {
+      0% { opacity: 1; }
+      33% { opacity: 0; }
+      66% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .testimonial-item:nth-child(1) { animation: carousel 9s infinite; }
+    .testimonial-item:nth-child(2) { animation: carousel 9s infinite 3s; }
+    .testimonial-item:nth-child(3) { animation: carousel 9s infinite 6s; }
+
   </style>
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Md. Ayan Alam</div>
     <ul class="nav-links">
@@ -221,6 +288,7 @@
     </ul>
   </nav>
 
+  <!-- Header -->
   <header id="home">
     <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
     <div class="name">Md. Ayan Alam (RAFID)</div>
@@ -228,35 +296,9 @@
   </header>
 
   <marquee behavior="scroll" direction="left" scrollamount="5">
-    আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। স্বাগতম Md. Ayan Alam (RAFID) এর পোর্টফোলিওতে! | 💻 Web Developer |  | 🎯 Future Chartered Accountant | যোগাযোগ করুন WhatsApp / Telegram এ!
+    আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। স্বাগতম Md. Ayan Alam (RAFID) এর পোর্টফোলিওতে! | 💻 Web Developer | 🎨 Graphic Designer | 🎯 Future Chartered Accountant | যোগাযোগ করুন WhatsApp / Telegram এ!
   </marquee>
 
+  <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! I’m Md. Ayan Alam — a passionate dreamer and ambitious individual currently on a journey to become a skilled freelancer and a future Chartered Accountant. I enjoy learning and growing in the fields of graphic design, web development, and tech solutions.
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p style="text-align:center;">Feel free to reach out directly or fill the form below:</p>
-
-    <form action="https://formspree.io/f/yourformid" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="_replyto" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://wa.me/8801915050351" target="_blank" class="contact-button">💬 WhatsApp</a>
-      <a href="https://t.me/urayan1425" target="_blank" class="telegram-button" style="background:#229ED9; padding:12px 20px; border-radius:8px; color:white; text-decoration:none;">📩 Telegram</a>
-    </div>
-  </section>
-
-  <section id="social">
-    <h2>Social Media</h2>
-    <div class="social-links">
-      <a href="https://www.facebook.com/mdayan15" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-      <a href="https://www.instagram.com/mysticalpha_07" target="_blank"><i class="fab fa-instagram"></i> Instagram</a
+   
