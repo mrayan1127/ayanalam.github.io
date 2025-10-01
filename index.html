@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Md. Ayan Alam (RAFID) | Portfolio</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     * {
@@ -14,8 +14,8 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0d1117;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
       color: #e6edf3;
       line-height: 1.6;
     }
@@ -24,7 +24,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px;
-      background-color: #161b22;
+      background: #161b22;
       position: fixed;
       width: 100%;
       top: 0;
@@ -78,7 +78,7 @@
     }
     section {
       padding: 60px 20px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
     }
     h2 {
@@ -108,7 +108,6 @@
       border-radius: 20px;
       overflow: hidden;
       height: 25px;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
     }
     .progress {
       height: 100%;
@@ -121,7 +120,7 @@
       transition: width 0.8s ease-in-out;
     }
 
-    /* Contact */
+    /* Contact Form */
     .contact-section {
       background: #161b22;
       border-radius: 12px;
@@ -130,19 +129,18 @@
       margin-bottom: 40px;
     }
     form {
-      max-width: 600px;
-      margin: auto;
       display: flex;
       flex-direction: column;
       gap: 15px;
+      max-width: 600px;
+      margin: auto;
     }
     input, textarea {
-      padding: 12px 15px;
+      padding: 12px;
       border: 1px solid #30363d;
       background: #0d1117;
       color: #e6edf3;
       border-radius: 8px;
-      resize: vertical;
     }
     input:focus, textarea:focus {
       border-color: #58a6ff;
@@ -161,69 +159,92 @@
       background-color: #1f6feb;
     }
 
-  #testimonials {
-  margin-top: 60px;
-  text-align: center;
-}
+    /* Testimonial Carousel (one line, min 6 items) */
+    #testimonials {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
+    }
+    .carousel-items {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+      /* to loop, we might use JS, below is basic auto scroll */
+      animation: scroll 20s linear infinite;
+    }
+    .testimonial-card {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+      width: 200px;
+      flex: 0 0 auto;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .testimonial-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #58a6ff;
+    }
+    .testimonial-author {
+      font-weight: bold;
+      color: #58a6ff;
+      margin-bottom: 4px;
+    }
+    .role {
+      font-size: 14px;
+      color: #8b949e;
+      margin-bottom: 8px;
+    }
+    .stars {
+      color: gold;
+      margin-bottom: 8px;
+    }
+    .message {
+      font-style: italic;
+      color: #c9d1d9;
+      font-size: 14px;
+    }
 
-.testimonial-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-}
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-.testimonial-card {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 12px;
-  padding: 25px;
-  width: 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-align: center;
-}
+    /* adjust for smaller screens */
+    @media (max-width: 768px) {
+      .carousel-items {
+        animation: scroll 30s linear infinite;
+      }
+      .testimonial-card {
+        width: 160px;
+      }
+    }
 
-.testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.testimonial-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 12px;
-  border: 3px solid #58a6ff;
-}
-
-.testimonial-card h3 {
-  margin-bottom: 4px;
-  color: #58a6ff;
-}
-
-.role {
-  font-size: 14px;
-  color: #8b949e;
-  margin-bottom: 10px;
-}
-
-.stars {
-  font-size: 18px;
-  color: gold;
-  margin-bottom: 12px;
-}
-
-.message {
-  font-style: italic;
-  font-size: 15px;
-  color: #c9d1d9;
-}
-
-
-    /* Footer */
+    /* Footer etc */
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social-links a {
+      margin: 10px;
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 18px;
+    }
     footer {
       background: #161b22;
       color: #8b949e;
@@ -231,7 +252,6 @@
       padding: 20px;
       margin-top: 60px;
     }
-
     .floating-whatsapp {
       position: fixed;
       bottom: 20px;
@@ -243,7 +263,6 @@
       text-decoration: none;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
-
   </style>
 </head>
 <body>
@@ -254,6 +273,7 @@
       <li><a href="#home">🏠 Home</a></li>
       <li><a href="#about">👤 About</a></li>
       <li><a href="#contact">✉️ Contact</a></li>
+      <li><a href="#testimonials">💬 Testimonials</a></li>
       <li><a href="#social">🌐 Social</a></li>
     </ul>
   </nav>
@@ -270,10 +290,7 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      Hello! I’m Md. Ayan Alam — a passionate dreamer and ambitious individual currently on a journey to become a skilled freelancer and a future Chartered Accountant.
-      I enjoy learning and growing in the fields of graphic design, web development, and tech solutions.
-    </p>
+    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer and an ambitious individual currently on a journey to become a skilled freelancer and a future Chartered Accountant.</p>
 
     <div class="skills-section">
       <div class="skill">
@@ -312,44 +329,60 @@
         <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <div style="text-align:center; margin-top:20px;">
-        <a href="https://wa.me/8801915050351" target="_blank" class="contact-button" style="background:#25D366; padding:12px 20px; border-radius:8px; color:white; text-decoration:none;">💬 WhatsApp</a>
-        <a href="https://t.me/urayan1425" target="_blank" class="telegram-button" style="background:#229ED9; padding:12px 20px; border-radius:8px; color:white; text-decoration:none;">📩 Telegram</a>
-      </div>
     </div>
   </section>
 
   <section id="testimonials">
-  <h2>💬 Testimonials</h2>
-  <div class="testimonial-container">
-    
-    <div class="testimonial-card">
-      <img src="https://i.pravatar.cc/100?img=12" alt="Client Photo" class="testimonial-img">
-      <h3>Farhan Ahmed</h3>
-      <p class="role">Business Owner</p>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p class="message">"Ayan was professional and super fast. The website looks amazing, better than I imagined!"</p>
+    <h2>💬 Testimonials</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel-items">
+        <!-- 6 testimonial cards minimum -->
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=11" alt="Client 1" class="testimonial-img">
+          <div class="testimonial-author">Farhan Ahmed</div>
+          <div class="role">Business Owner</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Ayan exceeded my expectations. The website is modern and user-friendly."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=12" alt="Client 2" class="testimonial-img">
+          <div class="testimonial-author">Sadia Rahman</div>
+          <div class="role">Designer</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Great communication and beautiful designs. Highly recommend!"</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=13" alt="Client 3" class="testimonial-img">
+          <div class="testimonial-author">Jahidul Islam</div>
+          <div class="role">Digital Marketer</div>
+          <div class="stars">⭐⭐⭐⭐</div>
+          <div class="message">"Very professional. Delivered on time with clean design."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=14" alt="Client 4" class="testimonial-img">
+          <div class="testimonial-author">Nusrat Jahan</div>
+          <div class="role">Startup Founder</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Amazing experience working together. Will come back for more."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=15" alt="Client 5" class="testimonial-img">
+          <div class="testimonial-author">Roshan Ali</div>
+          <div class="role">Marketing Lead</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Designs are polished and very responsive. Truly impressed."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=16" alt="Client 6" class="testimonial-img">
+          <div class="testimonial-author">Leena Akter</div>
+          <div class="role">Entrepreneur</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Highly creative work, always listens and implements feedback well."</div>
+        </div>
+        <!-- you can add more if you want -->
+      </div>
     </div>
-
-    <div class="testimonial-card">
-      <img src="https://i.pravatar.cc/100?img=25" alt="Client Photo" class="testimonial-img">
-      <h3>Sadia Rahman</h3>
-      <p class="role">Freelance Designer</p>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p class="message">"Loved working with him! His attention to detail is fantastic. Highly recommended."</p>
-    </div>
-
-    <div class="testimonial-card">
-      <img src="https://i.pravatar.cc/100?img=36" alt="Client Photo" class="testimonial-img">
-      <h3>Jahidul Islam</h3>
-      <p class="role">Digital Marketer</p>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <p class="message">"Ayan delivered on time and the design was clean. Will work again soon."</p>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <section id="social">
     <h2>Social Media</h2>
@@ -367,15 +400,5 @@
 
   <a href="https://wa.me/8801915050351" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
 
-  <script>
-    // Optional: make the navbar links scroll smoothly
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const href = link.getAttribute('href');
-        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>
