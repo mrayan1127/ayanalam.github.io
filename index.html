@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Md. Ayan Alam (RAFID) | Portfolio</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Md. Ayan Alam is a freelancer in web development, graphic design, and an aspiring Chartered Accountant.">
-  <meta name="keywords" content="Md. Ayan Alam, web developer, graphic designer, freelancer, portfolio, chartered accountant">
-  <meta name="author" content="Md. Ayan Alam">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
@@ -19,14 +13,12 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0d1117;
       color: #e6edf3;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
-
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -38,36 +30,30 @@
       top: 0;
       z-index: 1000;
     }
-
     .logo {
       font-size: 24px;
       font-weight: bold;
       color: #58a6ff;
     }
-
     .nav-links {
       list-style: none;
       display: flex;
       gap: 20px;
     }
-
     .nav-links a {
       color: #c9d1d9;
       text-decoration: none;
       font-weight: 500;
     }
-
     .nav-links a:hover {
       color: #58a6ff;
     }
-
     header {
       padding-top: 140px;
       text-align: center;
       background: linear-gradient(135deg, #111827, #1f2937);
       padding-bottom: 60px;
     }
-
     .profile-img {
       width: 140px;
       height: 140px;
@@ -76,57 +62,47 @@
       object-fit: cover;
       margin-bottom: 15px;
     }
-
     .name {
       font-size: 32px;
       font-weight: bold;
     }
-
     .title {
       font-size: 16px;
       color: #8b949e;
     }
-
     marquee {
       background-color: #003366;
       color: white;
       padding: 10px;
       font-weight: bold;
     }
-
     section {
       padding: 60px 20px;
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
     }
-
     h2 {
       color: #58a6ff;
       text-align: center;
       margin-bottom: 30px;
     }
-
     p {
-      line-height: 1.8;
       font-size: 16px;
     }
 
-    /* Skill Progress Bars */
+    /* Skills */
     .skills-section {
-      margin-top: 40px;
+      margin-top: 30px;
     }
-
     .skill {
       margin-bottom: 25px;
     }
-
     .skill span {
       display: inline-block;
       margin-bottom: 8px;
       font-weight: 600;
       color: #ffffff;
     }
-
     .progress-bar {
       background-color: #2d3748;
       border-radius: 20px;
@@ -134,7 +110,6 @@
       height: 25px;
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
     }
-
     .progress {
       height: 100%;
       background: linear-gradient(90deg, #58a6ff, #1f6feb);
@@ -143,17 +118,17 @@
       line-height: 25px;
       color: #fff;
       font-weight: bold;
-      transition: width 0.6s ease-in-out;
+      transition: width 0.8s ease-in-out;
     }
 
-    /* Contact Form */
+    /* Contact */
     .contact-section {
       background: #161b22;
       border-radius: 12px;
       padding: 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      margin-bottom: 40px;
     }
-
     form {
       max-width: 600px;
       margin: auto;
@@ -161,7 +136,6 @@
       flex-direction: column;
       gap: 15px;
     }
-
     input, textarea {
       padding: 12px 15px;
       border: 1px solid #30363d;
@@ -170,12 +144,10 @@
       border-radius: 8px;
       resize: vertical;
     }
-
     input:focus, textarea:focus {
       border-color: #58a6ff;
       outline: none;
     }
-
     button {
       padding: 12px;
       background-color: #58a6ff;
@@ -185,28 +157,51 @@
       cursor: pointer;
       font-weight: bold;
     }
-
     button:hover {
       background-color: #1f6feb;
     }
 
-    /* Social */
-    .social-links {
+    /* Testimonials */
+    .testimonials {
+      margin-top: 60px;
       text-align: center;
     }
-
-    .social-links a {
-      display: inline-block;
-      margin: 10px;
+    .testimonial-carousel {
+      position: relative;
+      overflow: hidden;
+      height: 180px;
+    }
+    .testimonial-item {
+      width: 100%;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      padding: 20px;
+      box-sizing: border-box;
+      top: 0;
+      left: 0;
+    }
+    .testimonial-item.active {
+      opacity: 1;
+      position: relative;
+    }
+    .testimonial-author {
+      margin-top: 10px;
+      font-weight: bold;
       color: #58a6ff;
-      text-decoration: none;
-      font-size: 20px;
     }
 
-    .social-links a:hover {
-      color: #1f6feb;
+    @keyframes carousel {
+      0% { opacity: 1; }
+      33% { opacity: 0; }
+      66% { opacity: 0; }
+      100% { opacity: 1; }
     }
+    .testimonial-item:nth-child(1) { animation: carousel 9s infinite; }
+    .testimonial-item:nth-child(2) { animation: carousel 9s infinite 3s; }
+    .testimonial-item:nth-child(3) { animation: carousel 9s infinite 6s; }
 
+    /* Footer */
     footer {
       background: #161b22;
       color: #8b949e;
@@ -227,57 +222,10 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
-    /* Testimonials */
-    .testimonials {
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .testimonial-carousel {
-      display: flex;
-      overflow: hidden;
-      position: relative;
-      height: 180px;
-    }
-
-    .testimonial-item {
-      flex: 0 0 100%;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      position: absolute;
-      left: 0;
-      right: 0;
-      padding: 20px;
-      font-style: italic;
-    }
-
-    .testimonial-carousel .testimonial-item.active {
-      opacity: 1;
-      position: relative;
-    }
-
-    .testimonial-author {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #58a6ff;
-    }
-
-    @keyframes carousel {
-      0% { opacity: 1; }
-      33% { opacity: 0; }
-      66% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    .testimonial-item:nth-child(1) { animation: carousel 9s infinite; }
-    .testimonial-item:nth-child(2) { animation: carousel 9s infinite 3s; }
-    .testimonial-item:nth-child(3) { animation: carousel 9s infinite 6s; }
-
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Md. Ayan Alam</div>
     <ul class="nav-links">
@@ -288,7 +236,6 @@
     </ul>
   </nav>
 
-  <!-- Header -->
   <header id="home">
     <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
     <div class="name">Md. Ayan Alam (RAFID)</div>
@@ -299,6 +246,100 @@
     আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। স্বাগতম Md. Ayan Alam (RAFID) এর পোর্টফোলিওতে! | 💻 Web Developer | 🎨 Graphic Designer | 🎯 Future Chartered Accountant | যোগাযোগ করুন WhatsApp / Telegram এ!
   </marquee>
 
-  <!-- About Section -->
   <section id="about">
-   
+    <h2>About Me</h2>
+    <p>
+      Hello! I’m Md. Ayan Alam — a passionate dreamer and ambitious individual currently on a journey to become a skilled freelancer and a future Chartered Accountant.
+      I enjoy learning and growing in the fields of graphic design, web development, and tech solutions.
+    </p>
+
+    <div class="skills-section">
+      <div class="skill">
+        <span>WordPress</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;">90%</div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>HTML</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 86%;">86%</div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>CSS</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;">70%</div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>JavaScript</span>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;">70%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-section">
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div style="text-align:center; margin-top:20px;">
+        <a href="https://wa.me/8801915050351" target="_blank" class="contact-button" style="background:#25D366; padding:12px 20px; border-radius:8px; color:white; text-decoration:none;">💬 WhatsApp</a>
+        <a href="https://t.me/urayan1425" target="_blank" class="telegram-button" style="background:#229ED9; padding:12px 20px; border-radius:8px; color:white; text-decoration:none;">📩 Telegram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial-item active">
+        “Ayan did an outstanding job on my website. Very responsive and highly creative.”
+        <div class="testimonial-author">— Client A</div>
+      </div>
+      <div class="testimonial-item">
+        “Great communication, delivered on time, and exceeded expectations.”
+        <div class="testimonial-author">— Client B</div>
+      </div>
+      <div class="testimonial-item">
+        “Professional and talented. Will hire again for future projects.”
+        <div class="testimonial-author">— Client C</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="social">
+    <h2>Social Media</h2>
+    <div class="social-links">
+      <a href="https://www.facebook.com/mdayan15" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="https://www.instagram.com/mysticalpha_07" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://github.com/mrayan1127" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/md-ayan-alam-2b5608369/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Md. Ayan Alam. All rights reserved.</p>
+  </footer>
+
+  <a href="https://wa.me/8801915050351" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
+
+  <script>
+    // Optional: make the navbar links scroll smoothly
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
