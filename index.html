@@ -332,92 +332,104 @@
       box-shadow: 0 0 25px #58a6ffdd;
     }
 
-    /* Testimonials Section */
-    #testimonials {
-      max-width: 1100px;
-      margin: 50px auto 70px;
-      padding: 0 15px;
-    }
+<style>
+  /* Testimonials Section */
+  #testimonials {
+    max-width: 1100px;
+    margin: 50px auto 70px;
+    padding: 0 15px;
+    color: #c9d1d9;
+  }
 
-    .testimonial-carousel {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* IE 10+ */
-      scroll-behavior: smooth;
-      padding-bottom: 10px;
-    }
+  #testimonials h2 {
+    color: #58a6ff;
+    font-weight: 800;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
 
-    .testimonial-carousel::-webkit-scrollbar {
-      display: none; /* Chrome/Safari/Webkit */
-    }
+  .testimonial-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+  }
 
+  .testimonial-carousel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Webkit */
+  }
+
+  .testimonial {
+    flex: 0 0 calc(100% / 6 - 16px);
+    background-color: #161b22;
+    border-radius: 14px;
+    padding: 20px 18px;
+    box-shadow: 0 0 15px #23863688;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    min-width: 160px;
+  }
+
+  .testimonial:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #58a6ffcc;
+    cursor: default;
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    color: #a2bffc;
+    margin-bottom: 12px;
+    font-size: 15px;
+    flex-grow: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .testimonial-author {
+    font-weight: 700;
+    color: #58a6ff;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .testimonial-role {
+    font-size: 13px;
+    color: #8b949e;
+    margin-bottom: 10px;
+    font-style: normal;
+  }
+
+  .stars {
+    color: #f0a500;
+    font-size: 16px;
+    user-select: none;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1100px) {
     .testimonial {
-      flex: 0 0 calc(100% / 6 - 16px);
-      background-color: #161b22;
-      border-radius: 14px;
-      padding: 20px 18px;
-      box-shadow: 0 0 15px #23863688;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s ease;
+      flex: 0 0 calc(100% / 4 - 16px);
     }
-
-    .testimonial:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px #58a6ffcc;
-      cursor: default;
+  }
+  @media (max-width: 768px) {
+    .testimonial {
+      flex: 0 0 calc(100% / 2 - 12px);
     }
-
-    .testimonial-text {
-      font-style: italic;
-      color: #a2bffc;
-      margin-bottom: 12px;
-      font-size: 15px;
-      flex-grow: 1;
-      letter-spacing: 0.02em;
+  }
+  @media (max-width: 480px) {
+    .testimonial {
+      flex: 0 0 90%;
     }
-
-    .testimonial-author {
-      font-weight: 700;
-      color: #58a6ff;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .testimonial-role {
-      font-size: 13px;
-      color: #8b949e;
-      margin-bottom: 10px;
-      font-style: normal;
-    }
-
-    /* Star rating */
-    .stars {
-      color: #f0a500;
-      font-size: 16px;
-      user-select: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .testimonial {
-        flex: 0 0 calc(100% / 4 - 16px);
-      }
-    }
-    @media (max-width: 768px) {
-      .testimonial {
-        flex: 0 0 calc(100% / 2 - 12px);
-      }
-    }
-    @media (max-width: 480px) {
-      .testimonial {
-        flex: 0 0 90%;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
@@ -513,7 +525,44 @@
     </form>
   </section>
 
-  <!-- Testimonials -->
   <section id="testimonials" aria-label="Testimonials">
-    <h2>Testimonials</h2>
-    <div class
+  <h2>Testimonials</h2>
+  <div class="testimonial-carousel" tabindex="0" aria-live="polite">
+    <div class="testimonial">
+      <p class="testimonial-text">"Md. Ayan Alam delivered my website on time and exceeded expectations."</p>
+      <div class="testimonial-author">- John Doe</div>
+      <div class="testimonial-role">Client</div>
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"Excellent communication and quality work. Highly recommended!"</p>
+      <div class="testimonial-author">- Jane Smith</div>
+      <div class="testimonial-role">Freelance Partner</div>
+      <div class="stars" aria-label="4 stars">★★★★☆</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"Professional and skilled, great to work with."</p>
+      <div class="testimonial-author">- Mike Johnson</div>
+      <div class="testimonial-role">Project Manager</div>
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"Creative designs and fast turnaround."</p>
+      <div class="testimonial-author">- Sarah Lee</div>
+      <div class="testimonial-role">Client</div>
+      <div class="stars" aria-label="4 stars">★★★★☆</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"Very detail-oriented and responsive throughout the project."</p>
+      <div class="testimonial-author">- David Kim</div>
+      <div class="testimonial-role">Business Owner</div>
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"A reliable freelancer with excellent skills."</p>
+      <div class="testimonial-author">- Emily Clark</div>
+      <div class="testimonial-role">Colleague</div>
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+    </div>
+  </div>
+</section>
