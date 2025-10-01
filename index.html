@@ -332,101 +332,79 @@
       box-shadow: 0 0 25px #58a6ffdd;
     }
 
-<style>
-  /* Testimonials Section */
-  #testimonials {
-    max-width: 1100px;
-    margin: 50px auto 70px;
-    padding: 0 15px;
-    color: #c9d1d9;
-  }
-
-  #testimonials h2 {
-    color: #58a6ff;
-    font-weight: 800;
-    font-size: 28px;
-    margin-bottom: 25px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-  }
-
-  .testimonial-carousel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE 10+ */
-    scroll-behavior: smooth;
-    padding-bottom: 10px;
-  }
-
-  .testimonial-carousel::-webkit-scrollbar {
-    display: none; /* Chrome/Safari/Webkit */
-  }
-
-  .testimonial {
-    flex: 0 0 calc(100% / 6 - 16px);
-    background-color: #161b22;
-    border-radius: 14px;
-    padding: 20px 18px;
-    box-shadow: 0 0 15px #23863688;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-    min-width: 160px;
-  }
-
-  .testimonial:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px #58a6ffcc;
-    cursor: default;
-  }
-
-  .testimonial-text {
-    font-style: italic;
-    color: #a2bffc;
-    margin-bottom: 12px;
-    font-size: 15px;
-    flex-grow: 1;
-    letter-spacing: 0.02em;
-  }
-
-  .testimonial-author {
-    font-weight: 700;
-    color: #58a6ff;
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
-
-  .testimonial-role {
-    font-size: 13px;
-    color: #8b949e;
-    margin-bottom: 10px;
-    font-style: normal;
-  }
-
-  .stars {
-    color: #f0a500;
-    font-size: 16px;
-    user-select: none;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 1100px) {
-    .testimonial {
-      flex: 0 0 calc(100% / 4 - 16px);
+ /* Testimonial Carousel (one line, min 6 items) */
+    #testimonials {
+      margin-top: 60px;
+      text-align: center;
     }
-  }
-  @media (max-width: 768px) {
-    .testimonial {
-      flex: 0 0 calc(100% / 2 - 12px);
+    .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0;
     }
-  }
-  @media (max-width: 480px) {
-    .testimonial {
-      flex: 0 0 90%;
+    .carousel-items {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+      /* to loop, we might use JS, below is basic auto scroll */
+      animation: scroll 20s linear infinite;
+    }
+    .testimonial-card {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+      width: 200px;
+      flex: 0 0 auto;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .testimonial-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #58a6ff;
+    }
+    .testimonial-author {
+      font-weight: bold;
+      color: #58a6ff;
+      margin-bottom: 4px;
+    }
+    .role {
+      font-size: 14px;
+      color: #8b949e;
+      margin-bottom: 8px;
+    }
+    .stars {
+      color: gold;
+      margin-bottom: 8px;
+    }
+    .message {
+      font-style: italic;
+      color: #c9d1d9;
+      font-size: 14px;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* adjust for smaller screens */
+    @media (max-width: 768px) {
+      .carousel-items {
+        animation: scroll 30s linear infinite;
+      }
+      .testimonial-card {
+        width: 160px;
+      }
     }
   }
 </style>
@@ -525,44 +503,54 @@
     </form>
   </section>
 
-  <section id="testimonials" aria-label="Testimonials">
-  <h2>Testimonials</h2>
-  <div class="testimonial-carousel" tabindex="0" aria-live="polite">
-    <div class="testimonial">
-      <p class="testimonial-text">"Md. Ayan Alam delivered my website on time and exceeded expectations."</p>
-      <div class="testimonial-author">- John Doe</div>
-      <div class="testimonial-role">Client</div>
-      <div class="stars" aria-label="5 stars">★★★★★</div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-text">"Excellent communication and quality work. Highly recommended!"</p>
-      <div class="testimonial-author">- Jane Smith</div>
-      <div class="testimonial-role">Freelance Partner</div>
-      <div class="stars" aria-label="4 stars">★★★★☆</div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-text">"Professional and skilled, great to work with."</p>
-      <div class="testimonial-author">- Mike Johnson</div>
-      <div class="testimonial-role">Project Manager</div>
-      <div class="stars" aria-label="5 stars">★★★★★</div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-text">"Creative designs and fast turnaround."</p>
-      <div class="testimonial-author">- Sarah Lee</div>
-      <div class="testimonial-role">Client</div>
-      <div class="stars" aria-label="4 stars">★★★★☆</div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-text">"Very detail-oriented and responsive throughout the project."</p>
-      <div class="testimonial-author">- David Kim</div>
-      <div class="testimonial-role">Business Owner</div>
-      <div class="stars" aria-label="5 stars">★★★★★</div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-text">"A reliable freelancer with excellent skills."</p>
-      <div class="testimonial-author">- Emily Clark</div>
-      <div class="testimonial-role">Colleague</div>
-      <div class="stars" aria-label="5 stars">★★★★★</div>
-    </div>
+ <section id="testimonials">
+    <h2>💬 Testimonials</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel-items">
+        <!-- 6 testimonial cards minimum -->
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=11" alt="Client 1" class="testimonial-img">
+          <div class="testimonial-author">Farhan Ahmed</div>
+          <div class="role">Business Owner</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Ayan exceeded my expectations. The website is modern and user-friendly."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=12" alt="Client 2" class="testimonial-img">
+          <div class="testimonial-author">Sadia Rahman</div>
+          <div class="role">Designer</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Great communication and beautiful designs. Highly recommend!"</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=13" alt="Client 3" class="testimonial-img">
+          <div class="testimonial-author">Jahidul Islam</div>
+          <div class="role">Digital Marketer</div>
+          <div class="stars">⭐⭐⭐⭐</div>
+          <div class="message">"Very professional. Delivered on time with clean design."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=14" alt="Client 4" class="testimonial-img">
+          <div class="testimonial-author">Nusrat Jahan</div>
+          <div class="role">Startup Founder</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Amazing experience working together. Will come back for more."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=15" alt="Client 5" class="testimonial-img">
+          <div class="testimonial-author">Roshan Ali</div>
+          <div class="role">Marketing Lead</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Designs are polished and very responsive. Truly impressed."</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=16" alt="Client 6" class="testimonial-img">
+          <div class="testimonial-author">Leena Akter</div>
+          <div class="role">Entrepreneur</div>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div class="message">"Highly creative work, always listens and implements feedback well."</div>
+        </div>
+        <!-- you can add more if you want -->
+      </div>
   </div>
 </section>
