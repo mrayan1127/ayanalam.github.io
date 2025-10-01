@@ -2,403 +2,518 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Md. Ayan Alam (RAFID) | Portfolio</title>
 
+  <meta name="description" content="Md. Ayan Alam is a passionate freelancer focusing on web development, graphic design, and aspiring to become a Chartered Accountant.">
+  <meta name="keywords" content="Md. Ayan Alam, web developer, graphic designer, freelancer, portfolio, chartered accountant">
+  <meta name="author" content="Md. Ayan Alam">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/x-icon" href="favicon-png.ico" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
-      line-height: 1.6;
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+      position: relative;
     }
+
+    /* Animated background */
+    .bg-layer {
+      position: fixed;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle at center, #1e293b, #0d1117 80%);
+      pointer-events: none;
+      transform: translate(0,0);
+      transition: transform 0.1s ease-out;
+      will-change: transform;
+      z-index: -1;
+      filter: brightness(0.85);
+    }
+
+    /* Navbar */
     .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #161b22;
+      padding: 18px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background: #161b22;
-      position: fixed;
-      width: 100%;
-      top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
     }
+
     .logo {
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 28px;
+      font-weight: 700;
       color: #58a6ff;
+      letter-spacing: 1.2px;
+      cursor: default;
+      user-select: none;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
-    .nav-links a {
-      color: #c9d1d9;
+
+    .nav-links li a {
+      color: #8b949e;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .nav-links a:hover {
-      color: #58a6ff;
+
+    .nav-links li a:hover {
+      background-color: #238636;
+      color: #e6fffa;
+      text-decoration: none;
     }
+
+    /* Header / Hero */
     header {
-      padding-top: 140px;
+      padding: 140px 20px 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
-      background: linear-gradient(135deg, #111827, #1f2937);
-      padding-bottom: 60px;
+      color: #c9d1d9;
     }
+
     .profile-img {
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      border: 4px solid #58a6ff;
+      border: 3px solid #58a6ff;
       object-fit: cover;
+      margin: 0 auto 15px auto;
+      box-shadow: 0 0 15px #58a6ffaa;
+    }
+
+    .name {
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      letter-spacing: 1.3px;
+      color: #58a6ff;
+    }
+
+    .title {
+      font-size: 20px;
+      color: #8b949e;
+      font-weight: 600;
+      letter-spacing: 0.4px;
       margin-bottom: 15px;
     }
-    .name {
-      font-size: 32px;
-      font-weight: bold;
+
+    /* Marquee - replaced with CSS animation */
+    .marquee-wrapper {
+      background-color: #238636;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: inset 0 0 15px #238636;
     }
-    .title {
+
+    .marquee {
+      display: inline-block;
+      padding: 12px 0;
+      color: #e6fffa;
+      font-weight: 700;
       font-size: 16px;
-      color: #8b949e;
+      animation: marquee 20s linear infinite;
+      user-select: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    marquee {
-      background-color: #003366;
-      color: white;
-      padding: 10px;
-      font-weight: bold;
+
+    @keyframes marquee {
+      0% { transform: translateX(100%) }
+      100% { transform: translateX(-100%) }
     }
+
+    /* Sections */
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 40px 20px;
     }
+
     h2 {
       color: #58a6ff;
+      font-weight: 800;
+      font-size: 28px;
+      margin-bottom: 25px;
       text-align: center;
-      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
-    p {
+
+    /* About */
+    #about p {
+      line-height: 1.6;
+      font-size: 17px;
+      color: #c9d1d9;
+      max-width: 800px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    /* Progress bars container */
+    .skills-container {
+      max-width: 700px;
+      margin: 25px auto 0 auto;
+    }
+
+    /* Single skill */
+    .skill {
+      margin-bottom: 18px;
+    }
+
+    .skill-label {
+      font-weight: 700;
+      margin-bottom: 5px;
+      letter-spacing: 0.05em;
+      color: #58a6ff;
+      display: flex;
+      justify-content: space-between;
       font-size: 16px;
     }
 
-    /* Skills */
-    .skills-section {
-      margin-top: 30px;
-    }
-    .skill {
-      margin-bottom: 25px;
-    }
-    .skill span {
-      display: inline-block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #ffffff;
-    }
+    /* Progress bar background */
     .progress-bar {
-      background-color: #2d3748;
-      border-radius: 20px;
+      background-color: #30363d;
+      border-radius: 12px;
       overflow: hidden;
-      height: 25px;
-    }
-    .progress {
-      height: 100%;
-      background: linear-gradient(90deg, #58a6ff, #1f6feb);
-      text-align: right;
-      padding-right: 10px;
-      line-height: 25px;
-      color: #fff;
-      font-weight: bold;
-      transition: width 0.8s ease-in-out;
+      height: 18px;
     }
 
-    /* Contact Form */
-    .contact-section {
-      background: #161b22;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    /* Progress fill with gradient */
+    .progress-fill {
+      height: 100%;
+      border-radius: 12px 0 0 12px;
+      background: linear-gradient(90deg, #58a6ff, #1f6feb);
+      box-shadow: 0 0 10px #58a6ffaa;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Contact Section */
+    #contact p {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      text-align: center;
+      color: #c9d1d9;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
       margin-bottom: 40px;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 600px;
-      margin: auto;
-    }
-    input, textarea {
-      padding: 12px;
-      border: 1px solid #30363d;
-      background: #0d1117;
-      color: #e6edf3;
-      border-radius: 8px;
-    }
-    input:focus, textarea:focus {
-      border-color: #58a6ff;
-      outline: none;
-    }
-    button {
-      padding: 12px;
-      background-color: #58a6ff;
-      color: white;
+
+    /* Contact buttons */
+    .contact-button, .telegram-button {
+      padding: 14px 28px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
+      font-size: 18px;
       cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background-color: #1f6feb;
+      font-weight: 700;
+      text-decoration: none;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      transition: background-color 0.3s ease;
+      user-select: none;
     }
 
-    /* Testimonial Carousel (one line, min 6 items) */
+    .contact-button {
+      background-color: #25d366;
+      box-shadow: 0 0 10px #25d366cc;
+    }
+
+    .contact-button:hover {
+      background-color: #1ebe5d;
+      box-shadow: 0 0 20px #1ebe5dcc;
+    }
+
+    .telegram-button {
+      background-color: #229ed9;
+      box-shadow: 0 0 10px #229ed9cc;
+    }
+
+    .telegram-button:hover {
+      background-color: #1a7dbb;
+      box-shadow: 0 0 20px #1a7dbbcc;
+    }
+
+    /* Contact form */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #161b22;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #58a6ff44;
+    }
+
+    form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #58a6ff;
+      letter-spacing: 0.03em;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      font-family: inherit;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      box-shadow: inset 0 0 8px #238636;
+      resize: vertical;
+      transition: box-shadow 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px #58a6ff;
+    }
+
+    form button {
+      background: linear-gradient(90deg, #58a6ff, #1f6feb);
+      padding: 14px 25px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #58a6ffbb;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: linear-gradient(90deg, #1f6feb, #58a6ff);
+      box-shadow: 0 0 25px #58a6ffdd;
+    }
+
+    /* Testimonials Section */
     #testimonials {
-      margin-top: 60px;
-      text-align: center;
+      max-width: 1100px;
+      margin: 50px auto 70px;
+      padding: 0 15px;
     }
-    .carousel-wrapper {
-      overflow: hidden;
-      position: relative;
-      padding: 20px 0;
-    }
-    .carousel-items {
+
+    .testimonial-carousel {
       display: flex;
       gap: 20px;
-      transition: transform 0.5s ease;
-      /* to loop, we might use JS, below is basic auto scroll */
-      animation: scroll 20s linear infinite;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE 10+ */
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
     }
-    .testimonial-card {
+
+    .testimonial-carousel::-webkit-scrollbar {
+      display: none; /* Chrome/Safari/Webkit */
+    }
+
+    .testimonial {
+      flex: 0 0 calc(100% / 6 - 16px);
       background-color: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 20px;
-      width: 200px;
-      flex: 0 0 auto;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 0 15px #23863688;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
     }
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+    .testimonial:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px #58a6ffcc;
+      cursor: default;
     }
-    .testimonial-img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-      border: 2px solid #58a6ff;
-    }
-    .testimonial-author {
-      font-weight: bold;
-      color: #58a6ff;
-      margin-bottom: 4px;
-    }
-    .role {
-      font-size: 14px;
-      color: #8b949e;
-      margin-bottom: 8px;
-    }
-    .stars {
-      color: gold;
-      margin-bottom: 8px;
-    }
-    .message {
+
+    .testimonial-text {
       font-style: italic;
-      color: #c9d1d9;
-      font-size: 14px;
+      color: #a2bffc;
+      margin-bottom: 12px;
+      font-size: 15px;
+      flex-grow: 1;
+      letter-spacing: 0.02em;
     }
 
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* adjust for smaller screens */
-    @media (max-width: 768px) {
-      .carousel-items {
-        animation: scroll 30s linear infinite;
-      }
-      .testimonial-card {
-        width: 160px;
-      }
-    }
-
-    /* Footer etc */
-    .social-links {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .social-links a {
-      margin: 10px;
+    .testimonial-author {
+      font-weight: 700;
       color: #58a6ff;
-      text-decoration: none;
-      font-size: 18px;
+      font-size: 14px;
+      margin-bottom: 6px;
     }
-    footer {
-      background: #161b22;
+
+    .testimonial-role {
+      font-size: 13px;
       color: #8b949e;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
+      margin-bottom: 10px;
+      font-style: normal;
     }
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      padding: 12px 16px;
-      border-radius: 50px;
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+
+    /* Star rating */
+    .stars {
+      color: #f0a500;
+      font-size: 16px;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .testimonial {
+        flex: 0 0 calc(100% / 4 - 16px);
+      }
+    }
+    @media (max-width: 768px) {
+      .testimonial {
+        flex: 0 0 calc(100% / 2 - 12px);
+      }
+    }
+    @media (max-width: 480px) {
+      .testimonial {
+        flex: 0 0 90%;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Animated background -->
+  <div class="bg-layer" id="bg"></div>
+
+  <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Md. Ayan Alam</div>
+    <div class="logo">MD. Ayan Alam</div>
     <ul class="nav-links">
       <li><a href="#home">🏠 Home</a></li>
       <li><a href="#about">👤 About</a></li>
+      <li><a href="#skills">🛠️ Skills</a></li>
+      <li><a href="#projects">📂 Projects</a></li>
       <li><a href="#contact">✉️ Contact</a></li>
       <li><a href="#testimonials">💬 Testimonials</a></li>
       <li><a href="#social">🌐 Social</a></li>
     </ul>
   </nav>
 
+  <!-- Hero -->
   <header id="home">
     <img src="ayan.jpg.jpg" alt="Md. Ayan Alam" class="profile-img" />
     <div class="name">Md. Ayan Alam (RAFID)</div>
-    <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | WordPress Expert</div>
+    <div class="title">Future Chartered Accountant | Web Developer | Graphics Designer | Wordpress</div>
   </header>
 
-  <marquee behavior="scroll" direction="left" scrollamount="5">
-    আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। স্বাগতম Md. Ayan Alam (RAFID) এর পোর্টফোলিওতে! | 💻 Web Developer | 🎨 Graphic Designer | 🎯 Future Chartered Accountant | যোগাযোগ করুন WhatsApp / Telegram এ!
-  </marquee>
+  <!-- Marquee -->
+  <div class="marquee-wrapper" aria-label="Welcome message marquee">
+    <div class="marquee" role="marquee" aria-live="off" aria-atomic="true" tabindex="0">
+      আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ। প্রিয় ভাই ও বোনেরা🌸 🌟 স্বাগতম Md. Ayan Alam (RAFID) এর পোর্টফোলিওতে! | 💻 Web Developer | 🎨 Graphic Designer | 🎯 Future Chartered Accountant | যোগাযোগ করুন WhatsApp / Telegram এর মাধ্যমে!
+    </div>
+  </div>
 
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer and an ambitious individual currently on a journey to become a skilled freelancer and a future Chartered Accountant.</p>
+    <p>Hello! I’m Md. Ayan Alam — a passionate dreamer and an ambitious individual currently on an exciting journey to become a skilled freelancer and a future Chartered Accountant.
+      With a deep interest in technology, business, and creative problem-solving, I’m actively building my skills in areas like graphic design, web development, and digital tools that empower modern professionals. 
+      I believe in continuous learning and self-improvement, and I dedicate my time to exploring new ways to add value through hard work and dedication.
+      Whether it’s creating a functional website, designing a clean visual, or organizing complex data — I enjoy challenges and always strive to deliver the best results with integrity and precision.
+      This is just the beginning, and I’m excited to see where this journey takes me.....
+    </p>
+  </section>
 
-    <div class="skills-section">
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
       <div class="skill">
-        <span>WordPress</span>
-        <div class="progress-bar">
-          <div class="progress" style="width: 90%;">90%</div>
-        </div>
+        <div class="skill-label">WordPress <span>90%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
       </div>
       <div class="skill">
-        <span>HTML</span>
-        <div class="progress-bar">
-          <div class="progress" style="width: 86%;">86%</div>
-        </div>
+        <div class="skill-label">HTML <span>86%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 86%;"></div></div>
       </div>
       <div class="skill">
-        <span>CSS</span>
-        <div class="progress-bar">
-          <div class="progress" style="width: 70%;">70%</div>
-        </div>
+        <div class="skill-label">CSS <span>70%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
       </div>
       <div class="skill">
-        <span>JavaScript</span>
-        <div class="progress-bar">
-          <div class="progress" style="width: 70%;">70%</div>
-        </div>
+        <div class="skill-label">JavaScript <span>70%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
       </div>
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <div class="contact-section">
-      <form action="https://formspree.io/f/yourformid" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <p>Reach out via WhatsApp, Telegram, or send me a message:</p>
+    <div class="contact-container">
+      <a href="https://wa.me/8801915050351" target="_blank" class="contact-button" aria-label="WhatsApp Chat">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://t.me/urayan1425" target="_blank" class="telegram-button" aria-label="Telegram Chat">
+        <i class="fab fa-telegram"></i> Telegram
+      </a>
     </div>
+
+    <form id="contactForm" aria-label="Contact form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
-  <section id="testimonials">
-    <h2>💬 Testimonials</h2>
-    <div class="carousel-wrapper">
-      <div class="carousel-items">
-        <!-- 6 testimonial cards minimum -->
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=11" alt="Client 1" class="testimonial-img">
-          <div class="testimonial-author">Farhan Ahmed</div>
-          <div class="role">Business Owner</div>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="message">"Ayan exceeded my expectations. The website is modern and user-friendly."</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=12" alt="Client 2" class="testimonial-img">
-          <div class="testimonial-author">Sadia Rahman</div>
-          <div class="role">Designer</div>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="message">"Great communication and beautiful designs. Highly recommend!"</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=13" alt="Client 3" class="testimonial-img">
-          <div class="testimonial-author">Jahidul Islam</div>
-          <div class="role">Digital Marketer</div>
-          <div class="stars">⭐⭐⭐⭐</div>
-          <div class="message">"Very professional. Delivered on time with clean design."</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=14" alt="Client 4" class="testimonial-img">
-          <div class="testimonial-author">Nusrat Jahan</div>
-          <div class="role">Startup Founder</div>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="message">"Amazing experience working together. Will come back for more."</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=15" alt="Client 5" class="testimonial-img">
-          <div class="testimonial-author">Roshan Ali</div>
-          <div class="role">Marketing Lead</div>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="message">"Designs are polished and very responsive. Truly impressed."</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=16" alt="Client 6" class="testimonial-img">
-          <div class="testimonial-author">Leena Akter</div>
-          <div class="role">Entrepreneur</div>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <div class="message">"Highly creative work, always listens and implements feedback well."</div>
-        </div>
-        <!-- you can add more if you want -->
-      </div>
-    </div>
-  </section>
-
-  <section id="social">
-    <h2>Social Media</h2>
-    <div class="social-links">
-      <a href="https://www.facebook.com/mdayan15" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-      <a href="https://www.instagram.com/mysticalpha_07" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://github.com/mrayan1127" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/md-ayan-alam-2b5608369/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Md. Ayan Alam. All rights reserved.</p>
-  </footer>
-
-  <a href="https://wa.me/8801915050351" class="floating-whatsapp" target="_blank">💬 WhatsApp</a>
-
-</body>
-</html>
+  <!-- Testimonials -->
+  <section id="testimonials" aria-label="Testimonials">
+    <h2>Testimonials</h2>
+    <div class
